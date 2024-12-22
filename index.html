@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Website</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>When'come to My Blog</h1>
+            <p>Your Gaming blog for the latest updates and news.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="blogs" class="blogs-section">
+            <h2>Latest Blogs</h2>
+            <div id="blog-container" class="blog-grid" aria-live="polite"></div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p><strong>Address:</strong> 123 Blog Lane, Blog City</p>
+                    <p><strong>Phone:</strong> +1 234 567 890</p>
+                    <p><strong>Email:</strong> contact@blogwebsite.com</p>
+                </div>
+                <form id="contact-form" aria-label="Contact Form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter your name" required />
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email" required />
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" placeholder="Write your message" required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Blog Website</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>

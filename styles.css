@@ -1,0 +1,185 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background: #007acc;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header .hero {
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./assets/BlogBanner.jpg") no-repeat center center/cover;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.blogs-section h2{
+    display: flex;
+    justify-content: center;
+}
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section */
+.contact-section {
+    background: url("./assets/ContactBackground.jpg") no-repeat center center/cover;
+    padding: 4rem 2rem;
+    color: white;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(90, 86, 86, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.contact-info {
+    font-size: 1rem;
+    text-align: left;
+}
+
+.contact-info p {
+    margin: 1rem 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 0.5rem;
+    text-align: left;
+    color: #f0f0f0;
+}
+
+form input,
+form textarea {
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: 2px solid #007acc;
+}
+
+form textarea {
+    resize: none;
+    height: 100px;
+}
+
+form button {
+    background: #007acc;
+    color: white;
+    padding: 0.7rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #005f99;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Animations */
+.blog-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
