@@ -2,63 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog Website</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
-        <nav aria-label="Main Navigation">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#blogs">Blogs</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <h1 id="header">Welcome to My Blog</h1>
+        <nav>
+            <ul class="navbar">
+                <li class="navbar__item"><a href="#blogs">Blogs</a></li>
+                <li class="navbar__item"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <div class="hero">
-            <h1>When'come to My Blog</h1>
-            <p>Your Gaming blog for the latest updates and news.</p>
-        </div>
     </header>
 
+    <!-- Blog Banner -->
+    <section class="banner">
+        <div class="banner__content">
+            <h2>Discover the Latest Updates</h2>
+            <p>Stay updated with trending topics, tech, and gaming news!</p>
+        </div>
+    </section>
+
     <main>
-        <section id="blogs" class="blogs-section">
-            <h2>Latest Blogs</h2>
-            <div id="blog-container" class="blog-grid" aria-live="polite"></div>
+        <!-- Blog Section -->
+        <section id="blogs" class="blog-container">
+            <h2 class="section-title">Latest Blogs</h2>
         </section>
 
-        <section id="contact" class="contact-section">
-            <h2>Contact Us</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <p><strong>Address:</strong> 123 Blog Lane, Blog City</p>
-                    <p><strong>Phone:</strong> +1 234 567 890</p>
-                    <p><strong>Email:</strong> contact@blogwebsite.com</p>
-                </div>
-                <form id="contact-form" aria-label="Contact Form">
+        <!-- Contact Form -->
+        <section id="contact" class="contact-form-container">
+            <h2 class="section-title">Contact Us</h2>
+            <form id="contact-form" class="form">
+                <div class="form__group">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" placeholder="Enter your name" required />
-
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form__group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" placeholder="Enter your email" required />
-
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form__group">
                     <label for="message">Message:</label>
-                    <textarea id="message" placeholder="Write your message" required></textarea>
-
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="form__button">Submit</button>
+            </form>
         </section>
-
     </main>
 
     <footer>
-        <p>&copy; 2024 Blog Website</p>
+        <p>&copy; 2024 My Blog. All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js" defer></script>
+    <!-- Blog Card Template -->
+    <template id="blog-card-template">
+        <div class="blog-card">
+            <img class="blog-card__image" src="" alt="" loading="lazy">
+            <h3 class="blog-card__title"></h3>
+            <p class="blog-card__content"></p>
+        </div>
+    </template>
+
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>

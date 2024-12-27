@@ -1,28 +1,23 @@
-const blogs = [
-    { title: "Venti's Rerun", content: "Venti's Banner has Re-arrive!  Let's Pull for our first Arcon at the scene!", image: "assets/Venti.jpg" },
-    { title: "Prime Vandal's Issue", content: "A bug has discover in Prime Vandal during reloading scene!", image: "assets/Vandal.jpg" },
-    { title: "Kelra's Debut!", content: "Kelra being the MVP of the recent M6 tournament ay Malaysia!", image: "assets/Kelra.jpg" },
-];
+import { blogs } from './blogs.js';
 
-const blogContainer = document.getElementById("blog-container");
+const blogContainer = document.getElementById("blogs");
+const contactForm = document.getElementById("contact-form");
 
-// Load blogs
+// Load blogs using the template
 function loadBlogs() {
+    const template = document.getElementById("blog-card-template");
     blogContainer.innerHTML = ""; // Clear container
-    blogs.forEach((blog, index) => {
-        const blogCard = document.createElement("div");
-        blogCard.classList.add("blog-card");
-        blogCard.innerHTML = `
-        <img src="${blog.image}" alt="${blog.title}" />
-        <h3>${blog.title}</h3>
-        <p>${blog.content}</p>
-      `;
-        blogContainer.appendChild(blogCard);
+    blogs.forEach((blog) => {
+        const clone = template.content.cloneNode(true);
+        clone.querySelector(".blog-card__image").src = blog.image;
+        clone.querySelector(".blog-card__image").alt = blog.title;
+        clone.querySelector(".blog-card__title").textContent = blog.title;
+        clone.querySelector(".blog-card__content").textContent = blog.content;
+        blogContainer.appendChild(clone);
     });
 }
 
-// Contact form
-const contactForm = document.getElementById("contact-form");
+// Handle form submission
 contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const name = document.getElementById("name").value;
@@ -32,6 +27,8 @@ contactForm.addEventListener("submit", (e) => {
     // Save to localStorage
     localStorage.setItem("contactForm", JSON.stringify({ name, email, message }));
     alert("Message submitted!");
+    contactForm.reset();
 });
 
-loadBlogs();
+// Initialize the app
+document.addEventListener("DOMContentLoaded", loadBlogs);
