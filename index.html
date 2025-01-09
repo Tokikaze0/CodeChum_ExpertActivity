@@ -11,10 +11,10 @@
 <body>
     <header>
         <h1 id="header">Welcome to My Blog</h1>
-        <nav>
+        <nav role="navigation" aria-label="Main Navigation">
             <ul class="navbar">
-                <li class="navbar__item"><a href="#blogs">Blogs</a></li>
-                <li class="navbar__item"><a href="#contact">Contact</a></li>
+                <li class="navbar__item"><a href="#blogs" aria-label="Go to Blogs Section">Blogs</a></li>
+                <li class="navbar__item"><a href="#contact" aria-label="Go to Contact Section">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -36,20 +36,20 @@
         <!-- Contact Form -->
         <section id="contact" class="contact-form-container">
             <h2 class="section-title">Contact Us</h2>
-            <form id="contact-form" class="form">
+            <form id="contact-form" class="form" role="form" aria-label="Contact Form">
                 <div class="form__group">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required placeholder="John Wick" aria-label="John Wick">
+                    <input type="text" id="name" name="name" required placeholder="John Wick" aria-label="Your Name">
                 </div>
                 <div class="form__group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required placeholder="example@email.com" aria-label="example@email.com">
+                    <input type="email" id="email" name="email" required placeholder="example@email.com" aria-label="Your Email">
                 </div>
                 <div class="form__group">
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <textarea id="message" name="message" rows="5" required aria-label="Your Message"></textarea>
                 </div>
-                <button type="submit" class="form__button">Submit</button>
+                <button type="submit" class="form__button" aria-label="Submit Form">Submit</button>
             </form>
         </section>
     </main>
@@ -61,7 +61,7 @@
     <!-- Blog Card Template -->
     <template id="blog-card-template">
         <div class="blog-card">
-            <img class="blog-card__image" src="" alt="" loading="lazy">
+            <img class="blog-card__image" src="./assets/loading.gif" alt="" loading="lazy">
             <h3 class="blog-card__title"></h3>
             <p class="blog-card__content"></p>
         </div>

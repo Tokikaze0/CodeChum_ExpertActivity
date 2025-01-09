@@ -17,17 +17,39 @@ function loadBlogs() {
     });
 }
 
+// Function to handle form submission
+async function handleFormSubmission(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    try {
+        await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate async operation
+        localStorage.setItem("contactForm", JSON.stringify({ name, email, message }));
+        alert("Message submitted successfully!");
+        contactForm.reset();
+    } catch (error) {
+        alert("Failed to submit the message. Please try again.");
+    }
+}
+
 // Handle form submission
-contactForm.addEventListener("submit", (e) => {
+contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
 
-    // Save to localStorage
-    localStorage.setItem("contactForm", JSON.stringify({ name, email, message }));
-    alert("Message submitted!");
-    contactForm.reset();
+    // Simulate an async operation (e.g., API call)
+    try {
+        await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay
+        localStorage.setItem("contactForm", JSON.stringify({ name, email, message }));
+        alert("Message submitted successfully!");
+        contactForm.reset();
+    } catch (error) {
+        alert("Failed to submit the message. Please try again.");
+    }
 });
 
 // Initialize the app
